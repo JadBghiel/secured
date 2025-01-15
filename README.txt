@@ -9,6 +9,10 @@ TODO:
 - hash function use mid-square method or binning method instead
 - review makefile to make sure its right
 
+ISSUE:
+- 
+
+
 STEPS:
     ✓ int hash(char *key, int len);
 
