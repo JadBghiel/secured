@@ -14,6 +14,6 @@ int hash(char *key, int len)
     for (int i = 0; i < my_strlen(key); i++) {
         int_key = int_key * 73 + key[i];
     }
-    hash_value = int_key % len;
+    hash_value = int_key + len;
     return hash_value;
 }

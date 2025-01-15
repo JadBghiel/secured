@@ -12,6 +12,7 @@ SRC = src/main.c \
     src/handling.c \
     src/table.c \
     src/lib/my_atoi.c \
+    src/lib/my_atol.c \
     src/lib/my_isdigit.c \
     src/lib/my_isspace.c \
     src/lib/my_memcpy.c \
@@ -23,7 +24,7 @@ SRC = src/main.c \
     src/lib/my_strcpy.c \
     src/lib/my_strdup.c \
     src/lib/my_strlen.c \
-    src/lib/my_strtok.c
+    src/lib/my_strtok.c \
 
 OBJ = $(SRC:.c=.o)
 

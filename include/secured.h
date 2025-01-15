@@ -14,7 +14,7 @@
 typedef struct bucket bucket_t;
 
 typedef struct bucket {
-    char *key;
+    long key;
     char *value;
     bucket_t *head;
     size_t n_member;

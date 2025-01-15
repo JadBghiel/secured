@@ -1,4 +1,11 @@
 TODO:
+- modify the ht_dump to check if there is smt in the table is yes print [0]
+    then linebreak then > {hashvalue} - {value}
+    if no then just print [0]
+    do that recursively to print every slot of the array
+
+- idk why with the main from pdf from insert the hash value between '>' and '-' is always 0 ?
+
 - hash function use mid-square method or binning method instead
 - review makefile to make sure its right
 
