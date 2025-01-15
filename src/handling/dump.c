@@ -6,7 +6,8 @@
 */
 #include "../../include/secured.h"
 
-void print_bucket_empty(size_t index) {
+void print_bucket_empty(size_t index)
+{
     my_putstr("[");
     my_put_nbr(index);
     my_putstr("]:");

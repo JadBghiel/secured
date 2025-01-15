@@ -21,24 +21,25 @@ bucket_t *create_bucket(char *key, char *value)
 
 int ht_insert(hashtable_t *ht, char *key, char *value)
 {
+    long full_hash;
+    int index;
+    bucket_t *new_bucket;
+
     if (!ht || !key || !value) {
         return -1;
     }
-    
-    long hash_value = hash(key, ht->max_slots);
-    
-    bucket_t *new_bucket = malloc(sizeof(bucket_t));
+    full_hash = hash(key, ht->max_slots);
+    index = full_hash % ht->max_slots;
+    new_bucket = malloc(sizeof(bucket_t));
     if (!new_bucket) {
         return -1;
     }
-    
-    new_bucket->key = hash_value;
+    new_bucket->key = full_hash;
     new_bucket->value = my_strdup(value);
     new_bucket->next = NULL;
-    
-    new_bucket->next = ht->data[hash_value].next;
-    ht->data[hash_value].next = new_bucket;
-    ht->data[hash_value].n_member++;
+    new_bucket->next = ht->data[index].next;
+    ht->data[index].next = new_bucket;
+    ht->data[index].n_member++;
     ht->used_slots++;
     return 0;
 }
