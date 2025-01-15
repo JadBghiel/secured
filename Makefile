@@ -27,7 +27,7 @@ SRC = src/main.c \
 
 OBJ = $(SRC:.c=.o)
 
-NAME = libhashtable.a
+NAME = a.out
 
 LDFLAGS = -g
 CPPFLAGS = -Iinclude

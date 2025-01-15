@@ -5,4 +5,3 @@ temp/
 *.a
 settings.json
 .vscode
-main.c
