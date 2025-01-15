@@ -16,7 +16,6 @@ void print_bucket_empty(size_t index) {
 void print_bucket(bucket_t *bucket, hashtable_t *ht, size_t index)
 {
     bucket_t *current = bucket;
-    int hash_value;
 
     my_putstr("[");
     my_put_nbr(index);
@@ -25,8 +24,7 @@ void print_bucket(bucket_t *bucket, hashtable_t *ht, size_t index)
         my_putchar('\n');
         my_putchar('>');
         my_putchar(' ');
-        hash_value = current->key % ht->max_slots;
-        my_put_nbr(hash_value);
+        my_put_nbr(current->key);
         my_putstr(" - ");
         my_putstr(current->value);
         current = current->next;

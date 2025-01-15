@@ -20,4 +20,7 @@ STEPS:
     ✕ int ht_delete(hashtable_t *ht, char *key);
     ✕ char *ht_search(hashtable_t *ht, char *key);
 
-makes sure collisions are handled
+makes sure collisions are handled:
+
+if the hash_value is the same in the same index put it into the ll
+if 
