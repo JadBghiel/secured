@@ -24,6 +24,5 @@ long my_atol(const char *str)
         result = result * 10 + (str[i] - '0');
         i++;
     }
-
     return result * sign;
 }

@@ -20,7 +20,7 @@ void print_bucket(bucket_t *bucket, size_t index)
 
     my_putstr("[");
     my_put_nbr(index);
-    my_putstr("]:");    
+    my_putstr("]:");
     while (current) {
         my_putchar('\n');
         my_putchar('>');
