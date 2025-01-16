@@ -12,15 +12,10 @@ hashtable_t *allocate_and_initialize_hashtable(int len)
 
     if (!ht)
         return NULL;
-    ht->data = (bucket_t *)malloc(len * sizeof(bucket_t));
+    ht->data = (bucket_t **)my_calloc(len, sizeof(bucket_t *));
     if (!ht->data) {
         free(ht);
         return NULL;
-    }
-    for (int i = 0; i < len; i++) {
-        ht->data[i].head = NULL;
-        ht->data[i].n_member = 0;
-        ht->data[i].next = NULL;
     }
     return ht;
 }
@@ -50,9 +45,10 @@ void delete_hashtable(hashtable_t *ht)
         return;
     }
     for (size_t i = 0; i < ht->max_slots; i++) {
-        current = ht->data[i].next;
+        current = ht->data[i];
         while (current) {
             next = current->next;
+            free(current->value);
             free(current);
             current = next;
         }

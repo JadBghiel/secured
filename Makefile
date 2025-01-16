@@ -13,6 +13,7 @@ SRC = src/main.c \
     src/table.c \
     src/lib/my_atoi.c \
     src/lib/my_atol.c \
+    src/lib/calloc.c \
     src/lib/my_isdigit.c \
     src/lib/my_isspace.c \
     src/lib/my_memcpy.c \

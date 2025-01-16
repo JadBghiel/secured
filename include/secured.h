@@ -22,7 +22,7 @@ typedef struct bucket {
 } bucket_t;
 
 typedef struct {
-    bucket_t *data;
+    bucket_t **data;
     size_t used_slots;
     size_t max_slots;
     int (*hash_func)(char *, int);

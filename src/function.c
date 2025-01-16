@@ -8,10 +8,13 @@
 
 int hash(char *key, int len)
 {
-    unsigned long int_key = 0;
+    int int_key = 0;
 
     for (int i = 0; i < my_strlen(key); i++) {
         int_key = int_key * 73 + key[i];
     }
-    return int_key;
+    if (int_key < 0) {
+        int_key *= -1;
+    }
+    return (int)int_key;
 }

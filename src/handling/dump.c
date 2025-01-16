@@ -14,7 +14,7 @@ void print_bucket_empty(size_t index)
     my_putchar('\n');
 }
 
-void print_bucket(bucket_t *bucket, hashtable_t *ht, size_t index)
+void print_bucket(bucket_t *bucket, size_t index)
 {
     bucket_t *current = bucket;
 
@@ -40,8 +40,8 @@ void ht_dump(hashtable_t *ht)
         return;
     }
     for (size_t i = 0; i < ht->max_slots; i++) {
-        if (ht->data[i].next != NULL) {
-            print_bucket(ht->data[i].next, ht, i);
+        if (ht->data[i] != NULL) {
+            print_bucket(ht->data[i], i);
         } else {
             print_bucket_empty(i);
         }

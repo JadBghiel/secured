@@ -55,4 +55,5 @@ void *my_realloc(void *ptr, size_t old_size, size_t new_size);
 void *my_memcpy(void *dest, const void *src, size_t n);
 char *my_strtok(char *str, const char *delim);
 long my_atol(const char *str);
+void *my_calloc(size_t nmemb, size_t size);
 #endif /* MY_H */

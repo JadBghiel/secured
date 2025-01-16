@@ -36,10 +36,8 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     }
     new_bucket->key = full_hash;
     new_bucket->value = my_strdup(value);
-    new_bucket->next = NULL;
-    new_bucket->next = ht->data[index].next;
-    ht->data[index].next = new_bucket;
-    ht->data[index].n_member++;
+    new_bucket->next = ht->data[index];
+    ht->data[index] = new_bucket;
     ht->used_slots++;
     return 0;
 }
