@@ -9,11 +9,14 @@ CC = gcc
 
 SRC = src/main.c \
     src/function.c \
-    src/handling.c \
     src/table.c \
+    src/handling/delete.c \
+    src/handling/dump.c \
+    src/handling/insert.c \
+    src/handling/search.c \
     src/lib/my_atoi.c \
     src/lib/my_atol.c \
-    src/lib/calloc.c \
+    src/lib/my_calloc.c \
     src/lib/my_isdigit.c \
     src/lib/my_isspace.c \
     src/lib/my_memcpy.c \
@@ -29,18 +32,18 @@ SRC = src/main.c \
 
 OBJ = $(SRC:.c=.o)
 
-NAME = a.out
-
-LDFLAGS = -g
-CPPFLAGS = -Iinclude
-
-%.o: %.c
-	$(CC)	$(CPPFLAGS)	-c	$<	-o	$@
-
-$(NAME): $(OBJ)
-	ar	rcs	$(NAME)	$(OBJ)
+NAME = libhashtable.a
+INCLUDE_PATH = ./include/
+LDFLAGS = -I$(INCLUDE_PATH)
+CFLAGS = -Wall -g
 
 all:	$(NAME)
+
+$(NAME): libhashtable.a $(OBJ)
+	ar	-rc $(NAME)	$(OBJ)
+
+%.o: %.c
+	$(CC)	$(CFLAGS)   -c	$<	-o	$@ $(LDFLAGS)
 
 clean:
 	rm	-f	$(OBJ)
