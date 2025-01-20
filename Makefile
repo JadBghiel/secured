@@ -7,8 +7,7 @@
 
 CC = gcc
 
-SRC = src/main.c \
-    src/function.c \
+SRC = src/function.c \
     src/table.c \
     src/handling/delete.c \
     src/handling/dump.c \

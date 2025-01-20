@@ -2,8 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** my_put_nbr
 ** File description:
-** Gets ingr and outp with a recurs function
-** Final stumper rush3
+** display nbr
 */
 #include "../../include/my.h"
 
