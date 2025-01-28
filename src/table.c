@@ -8,11 +8,11 @@
 
 hashtable_t *allocate_and_initialize_hashtable(int len)
 {
-    hashtable_t *ht = (hashtable_t *)malloc(sizeof(hashtable_t));
+    hashtable_t *ht = malloc(sizeof(hashtable_t));
 
     if (!ht)
         return NULL;
-    ht->data = (bucket_t **)my_calloc(len, sizeof(bucket_t *));
+    ht->data = my_calloc(len, sizeof(bucket_t *));
     if (!ht->data) {
         free(ht);
         return NULL;
