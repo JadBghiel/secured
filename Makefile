@@ -28,6 +28,7 @@ SRC = src/function.c \
     src/lib/my_strdup.c \
     src/lib/my_strlen.c \
     src/lib/my_strtok.c \
+    src/lib/my_put_nbr.c
 
 OBJ = $(SRC:.c=.o)
 
