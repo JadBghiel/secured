@@ -30,8 +30,6 @@ An example main.c file is present in the src folder
 
 ### Proyect structure
 
-#### Approach
-
 ### Approach:
 
 The hashtable implementation uses separate chaining to handle collisions, where each slot in the hashtable contains a linked list of key-value pairs. The hash function computes a hash value for each key, and this value is used to determine the index in the hashtable. If multiple keys hash to the same index, they are stored in a linked list at that index.
